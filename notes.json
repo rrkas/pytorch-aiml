@@ -1,0 +1,14 @@
+{
+    "ML": "just geometry",
+    "imp":[
+        "all data is same"
+    ],
+    "supervised":{
+        "regression": [
+            "make line/ curve close to data points"
+        ],
+        "classification": [
+            "make line/ curve separate the data points of different classes"
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+sklearn
+- predefined models
+- APIs for executing tasks
+
+
+pytorch
+- no predefined models
+- we build models using basic building components
+- no fit() or predict()
