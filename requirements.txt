@@ -93,6 +93,7 @@ tensorflow-io-gcs-filesystem==0.23.1
 termcolor==1.1.0
 terminado==0.12.1
 testpath==0.5.0
+torch==1.10.2
 tornado==6.1
 traitlets==5.1.1
 typing_extensions==4.0.1
