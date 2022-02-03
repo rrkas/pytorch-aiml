@@ -37,7 +37,40 @@
         ],
         "how to make predictions": [
             "get value of equation for given inputs"
-        ]
+        ],
+        "different datasets": {
+            "existing set": [
+                "history/ old data",
+                "splits into train, validation (optional), test",
+                "labeled data"
+            ],
+            "train set": [
+                "labeled data",
+                "used to improve the parameters of model"
+            ],
+            "validation set": [
+                "optional",
+                "labeled data",
+                "used when test set is unlabeled",
+                "used to check accuracy of model"
+            ],
+            "test set": [
+                "labeled/ unlabeled data",
+                "if labeled, we can check accuracy",
+                "if unlabeled, we have to use validation set for checking accuracy and predict on test set"
+            ],
+            "prediction set": [
+                "unlabeled data",
+                "real unlabeled data which is given by user to find result"
+            ],
+            "cross-validation": [
+                "suppose existing set is split into S parts",
+                "S-1 parts are for training",
+                "1 part is for validation",
+                "overall accuracy = (1/S)(total accuracy)",
+                "used for large datasets"
+            ]
+        }
     },
     "supervised": {
         "regression": [
