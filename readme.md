@@ -4,3 +4,7 @@
 1. Build Model
 2. Train model
 3. Make predictions
+
+## Run code
+source venv/Scripts/activate  
+jupyter notebook
