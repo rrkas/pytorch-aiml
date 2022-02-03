@@ -79,5 +79,30 @@
         "classification": [
             "make line/ curve separate the data points of different classes"
         ]
-    }
+    },
+    "Neuron Network": [
+        "Eq of neuron: s((w')*x + b)",
+        {
+            "s": "sigmoid function (activation function)",
+            "w": "weight vector",
+            "w'": " = w^T = w_T = transpose of weight vector",
+            "x": "input vector",
+            "b": "bias"
+        },
+        "interconnected neurons",
+        "each neuron looks for a different feature",
+        "to make wide, add neurons in same layer",
+        "to make deep, add more layers",
+        [
+            "z = neuron layer (M x 1)",
+            "zj = jth neuron in z (value)",
+            "M = number of neurons in z (value)",
+            "x = inputs to z (D x 1)",
+            "W = weight matrix (D x M)",
+            "W' = transpose weight matrix (M x D)",
+            "b = bias (M x 1)",
+            "s() = sigmoid function (element wise)",
+            "equation : z = s( W'x + b )"
+        ]
+    ]
 }

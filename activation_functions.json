@@ -1,0 +1,48 @@
+{
+    "sigmoid":{
+        "formula": "s(x) = 1 / (1 + exp(-x))",
+        "range": "(0, 1)",
+        "center": "0.5",
+        "problem": "vanishing gradient"
+    },
+    "tanh": {
+        "formula": "tanh(a) = (exp(2a) - 1) / (exp(2a) + 1)",
+        "range": "(-1, 1)",
+        "center": "0",
+        "problem": "vanishing gradient"
+    },
+    "ReLU": {
+        "full form": "Rectifier Linear Unit",
+        "formula": "R(z) = max(0, z)",
+        "problem": "dead neurons (when weights <= 0, R(z) = 0)"
+    },
+    "LReLU":{
+        "full form": "Leaky Rectifier Linear Unit",
+        "formula": {
+            "x > 0": "f(x) = x",
+            "x = 0": "f(x) = 0",
+            "x < 0": "f(x) = a*x"
+        }
+    },
+    "ELU":{
+        "full form": "Exponential Linear Unit",
+        "formula": {
+            "x > 0": "f(x) = x",
+            "x <= 0": "f(x) = a(exp(x) - 1)"
+        }
+    },
+    "softplus":{
+        "formula": "f(x) = log(1 + exp(x))"
+    },
+    "BRU": {
+        "full form": "Bionodal Root Unit",
+        "formula": {
+            "z >= 0": "((r*r*z + 1) ^ (1 / r)) - (1 / r)",
+            "z < 0": "exp(r*z) - (1 / r)"
+        }
+    },
+    "Softmax": {
+        "usage": "in final layer",
+        "formula": "p(y = k | x) = (exp(a[k])) / sum(j=1..K, exp(a[j]))"
+    }
+}
