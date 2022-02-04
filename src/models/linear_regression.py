@@ -59,12 +59,13 @@ class LinearRegression:
         save_results.save_plt(plt, "errors")
 
         # plot
-        plt.figure()
-        predicted = self.model(inputs).detach().numpy()
-        plt.scatter(X, Y, label="Original data")
-        plt.plot(X, predicted, label="Fitted line")
-        plt.legend()
-        save_results.save_plt(plt, "predicted")
+        with torch.no_grad():
+            plt.figure()
+            predicted = self.model(inputs)
+            plt.scatter(X, Y, label="Original data")
+            plt.plot(X, predicted, label="Fitted line")
+            plt.legend()
+            save_results.save_plt(plt, "predicted")
 
     def parameters(self):
         return self.model.parameters()
