@@ -25,11 +25,7 @@ print(Y.data.shape)
 
 
 # build model ======================
-model = nn.Sequential(
-    nn.Linear(1, 128),
-    nn.ReLU(),
-    nn.Linear(128, 1),
-)
+model = nn.Sequential(nn.Linear(1, 128), nn.ReLU(), nn.Linear(128, 1),)
 criterion = nn.MSELoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 
@@ -54,7 +50,16 @@ plt.plot(losses)
 with torch.no_grad():
     predicted = model(X)
     plt.figure()
-    plt.plot(X, Y.numpy(), 'ro')
+    plt.plot(X, Y.numpy(), "ro")
     plt.plot(X, predicted.numpy())
+
+print("Weights and bias:")
+for module in model.modules():
+    try:
+        print(module)
+        print(module.weight.data.numpy())
+        print(module.bias.data.numpy())
+    except:
+        pass
 
 plt.show()

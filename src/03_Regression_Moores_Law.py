@@ -44,7 +44,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.7)
 n_epochs = 100
 zfill = len(str(n_epochs))
 losses = []
-with open(f"results/moore.txt", 'w') as f:
+with open(f"results/moore.txt", "w") as f:
     for i in range(n_epochs):
         optimizer.zero_grad()
 
@@ -55,7 +55,9 @@ with open(f"results/moore.txt", 'w') as f:
         loss.backward()
         optimizer.step()
 
-        f.write(f"Epoch: {str(i + 1).zfill(zfill)}/{n_epochs}\t Loss: {loss.item():.4f}\n")
+        f.write(
+            f"Epoch: {str(i + 1).zfill(zfill)}/{n_epochs}\t Loss: {loss.item():.4f}\n"
+        )
 
 # plt.figure()
 # plt.plot(losses)
@@ -63,8 +65,8 @@ with open(f"results/moore.txt", 'w') as f:
 with torch.no_grad():
     plt.figure()
     predicted_results = model(inputs)
-    plt.plot(X, Y, 'ro', label='Original data')
-    plt.plot(X, predicted_results, label='Fitted line')
+    plt.plot(X, Y, "ro", label="Original data")
+    plt.plot(X, predicted_results, label="Fitted line")
     plt.legend()
 
 """

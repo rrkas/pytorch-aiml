@@ -9,7 +9,9 @@ from sklearn.preprocessing import StandardScaler
 data = load_breast_cancer()
 
 # preprocessing ==================================
-X_train, X_test, Y_train, Y_test = train_test_split(data.data, data.target, test_size=0.3)
+X_train, X_test, Y_train, Y_test = train_test_split(
+    data.data, data.target, test_size=0.3
+)
 N, D = X_train.shape
 
 scaler = StandardScaler()
@@ -21,10 +23,7 @@ X_test = torch.from_numpy(scaler.transform(X_test).astype(np.float32))
 Y_test = torch.from_numpy(Y_test.astype(np.float32).reshape(-1, 1))
 
 # build model ====================================
-model = nn.Sequential(
-    nn.Linear(D, 1),
-    nn.Sigmoid(),
-)
+model = nn.Sequential(nn.Linear(D, 1), nn.Sigmoid(),)
 criterion = nn.BCEWithLogitsLoss()
 optimizer = torch.optim.Adam(model.parameters())
 

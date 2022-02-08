@@ -7,14 +7,14 @@ import torchvision.transforms as transforms
 
 # get data ========================================
 train_dataset = torchvision.datasets.MNIST(
-    root='data_downloadable',
+    root="data_downloadable",
     train=True,
     transform=transforms.ToTensor(),
     download=True,
 )
 print(f"train set: {train_dataset.data.shape}")
 test_dataset = torchvision.datasets.MNIST(
-    root='data_downloadable',
+    root="data_downloadable",
     train=False,
     transform=transforms.ToTensor(),
     download=True,
@@ -27,7 +27,7 @@ model = nn.Sequential(
     nn.ReLU(),  # process output of layer
     nn.Linear(528, 128),  # layer
     nn.ReLU(),  # process output of layer
-    nn.Linear(128, 10)  # hidden layer
+    nn.Linear(128, 10),  # hidden layer
 )  # No need for final softmax! Its combined with CrossEntropyLoss
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -40,15 +40,11 @@ optimizer = torch.optim.Adam(model.parameters())
 batch_size = 128
 
 train_loader = torch.utils.data.DataLoader(
-    dataset=train_dataset,
-    batch_size=batch_size,
-    shuffle=True,
+    dataset=train_dataset, batch_size=batch_size, shuffle=True,
 )
 
 test_loader = torch.utils.data.DataLoader(
-    dataset=test_dataset,
-    batch_size=batch_size,
-    shuffle=False,
+    dataset=test_dataset, batch_size=batch_size, shuffle=False,
 )
 
 # train model =====================================

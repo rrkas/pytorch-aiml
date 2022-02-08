@@ -1,108 +1,115 @@
 {
-    "ML": "just geometry",
-    "imp": [
-        "all data is same"
+  "ML": "just geometry",
+  "imp": [
+    "all data is same"
+  ],
+  "concepts": {
+    "what is a model": [
+      "It is a equation which takes input and has parameters to give value",
+      "Eg: y' = mx + c; y = actual result, y' = value we got using the equation"
     ],
-    "concepts": {
-        "what is a model": [
-            "It is a equation which takes input and has parameters to give value",
-            "Eg: y' = mx + c; y = actual result, y' = value we got using the equation"
+    "how to fit a model": [
+      "finding slope and intercept (parameters)",
+      "loss function = cost function = error function = objective function",
+      "equation CANNOT perfectly pass through all data points",
+      {
+        "bad fit": "larger error",
+        "good fit": "smaller error",
+        "perfect fit": "0 error (passes through all data points)"
+      },
+      "target: minimize loss",
+      {
+        "linear": [
+          "for each parameter in parameters:",
+          "del(loss function)/ del(parameter) = 0",
+          "del = partial derivative"
         ],
-        "how to fit a model": [
-            "finding slope and intercept (parameters)",
-            "loss function = cost function = error function = objective function",
-            "equation CANNOT perfectly pass through all data points",
-            {
-                "bad fit": "larger error",
-                "good fit": "smaller error",
-                "perfect fit": "0 error (passes through all data points)"
-            },
-            "target: minimize loss",
-            {
-                "linear": [
-                    "for each parameter in parameters:",
-                    "del(loss function)/ del(parameter) = 0",
-                    "del = partial derivative"
-                ],
-                "others": [
-                    "gradient descent",
-                    "t = (m, b) = random()",
-                    "for i in range(n_epochs):",
-                    "   t = t - n * del(t, L)",
-                    "t = theta",
-                    "n = nu",
-                    "del = delta of L wrt t"
-                ]
-            }
-        ],
-        "how to make predictions": [
-            "get value of equation for given inputs"
-        ],
-        "different datasets": {
-            "existing set": [
-                "history/ old data",
-                "splits into train, validation (optional), test",
-                "labeled data"
-            ],
-            "train set": [
-                "labeled data",
-                "used to improve the parameters of model"
-            ],
-            "validation set": [
-                "optional",
-                "labeled data",
-                "used when test set is unlabeled",
-                "used to check accuracy of model"
-            ],
-            "test set": [
-                "labeled/ unlabeled data",
-                "if labeled, we can check accuracy",
-                "if unlabeled, we have to use validation set for checking accuracy and predict on test set"
-            ],
-            "prediction set": [
-                "unlabeled data",
-                "real unlabeled data which is given by user to find result"
-            ],
-            "cross-validation": [
-                "suppose existing set is split into S parts",
-                "S-1 parts are for training",
-                "1 part is for validation",
-                "overall accuracy = (1/S)(total accuracy)",
-                "used for large datasets"
-            ]
-        }
-    },
-    "supervised": {
-        "regression": [
-            "make line/ curve close to data points"
-        ],
-        "classification": [
-            "make line/ curve separate the data points of different classes"
+        "others": [
+          "gradient descent",
+          "t = (m, b) = random()",
+          "for i in range(n_epochs):",
+          "   t = t - n * del(t, L)",
+          "t = theta",
+          "n = nu",
+          "del = delta of L wrt t"
         ]
-    },
-    "Neuron Network": [
-        "Eq of neuron: s((w')*x + b)",
-        {
-            "s": "sigmoid function (activation function)",
-            "w": "weight vector",
-            "w'": " = w^T = w_T = transpose of weight vector",
-            "x": "input vector",
-            "b": "bias"
-        },
-        "interconnected neurons",
-        "each neuron looks for a different feature",
-        "to make wide, add neurons in same layer",
-        "to make deep, add more layers",
-        [
-            "z = neuron layer (M x 1)",
-            "zj = jth neuron in z (value)",
-            "M = number of neurons in z (value)",
-            "x = inputs to z (D x 1)",
-            "W = weight matrix (D x M)",
-            "W' = transpose weight matrix (M x D)",
-            "b = bias (M x 1)",
-            "s() = sigmoid function (element wise)",
-            "equation : z = s( W'x + b )"
-        ]
+      }
+    ],
+    "how to make predictions": [
+      "get value of equation for given inputs"
+    ],
+    "different datasets": {
+      "existing set": [
+        "history/ old data",
+        "splits into train, validation (optional), test",
+        "labeled data"
+      ],
+      "train set": [
+        "labeled data",
+        "used to improve the parameters of model"
+      ],
+      "validation set": [
+        "optional",
+        "labeled data",
+        "used when test set is unlabeled",
+        "used to check accuracy of model"
+      ],
+      "test set": [
+        "labeled/ unlabeled data",
+        "if labeled, we can check accuracy",
+        "if unlabeled, we have to use validation set for checking accuracy and predict on test set"
+      ],
+      "prediction set": [
+        "unlabeled data",
+        "real unlabeled data which is given by user to find result"
+      ],
+      "cross-validation": [
+        "suppose existing set is split into S parts",
+        "S-1 parts are for training",
+        "1 part is for validation",
+        "overall accuracy = (1/S)(total accuracy)",
+        "used for large datasets"
+      ]
+    }
+  },
+  "supervised": {
+    "regression": [
+      "make line/ curve close to data points"
+    ],
+    "classification": [
+      "make line/ curve separate the data points of different classes"
     ]
+  },
+  "Neuron Network": [
+    "Eq of neuron: s((w')*x + b)",
+    {
+      "s": "sigmoid function (activation function)",
+      "w": "weight vector",
+      "w'": " = w^T = w_T = transpose of weight vector",
+      "x": "input vector",
+      "b": "bias"
+    },
+    "interconnected neurons",
+    "each neuron looks for a different feature",
+    "to make wide, add neurons in same layer",
+    "to make deep, add more layers",
+    [
+      "z = neuron layer (M x 1)",
+      "zj = jth neuron in z (value)",
+      "M = number of neurons in z (value)",
+      "x = inputs to z (D x 1)",
+      "W = weight matrix (D x M)",
+      "W' = transpose weight matrix (M x D)",
+      "b = bias (M x 1)",
+      "s() = sigmoid function (element wise)",
+      "equation : z = s( W'x + b )"
+    ]
+  ],
+  "ANN": [
+    "For multiple layers of models",
+    "For better accuracy and complexity"
+  ],
+  "CNN": [
+    "For modifying Image type data ONLY"
+  ]
 }
